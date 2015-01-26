@@ -1,19 +1,24 @@
 extends layout
 
 block body
-  div(ng-controller='AppCtrl')
-    h2 Hello {{name}}
-    ul.menu
-      li
-        a(href='view1') view1
-      li
-        a(href='view2') view2
+  div(id='page-container')
+    div(class='row')
+      div(class='col-md-6 col-md-offset-3')
+        div(ng-controller='AppCtrl')
+          div(class='page-header')
+            h2 Projects
+          ul.menu
+            li
+              a(href='parallel') 'Parallel.js'
 
-    div(ng-view)
+          div(ng-view)
 
-    div
-      | Angular seed app: v
-      span(app-version)
+  div(class='row')
+    div(class='col-md-6 col-md-offset-3')
+      footer
+        div
+          | Angular seed app: v
+          span(app-version)
 
   script(src='js/lib/angular/angular.js')
   script(src='js/app.js')

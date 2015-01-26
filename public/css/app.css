@@ -1,8 +1,18 @@
 /* app css stylesheet */
-
+html, body {
+  background: #226BB3 url("../img/grid-pattern.png") -4px -1px;
+  color: white;
+  font-family: "Raleway";
+  height: 100%;
+}
+#page-container {
+  background: #226BB3 url("../img/grid-pattern.png") -4px -1px;
+  color: white;
+  height: 100%;
+}
 .menu {
   list-style: none;
-  border-bottom: 0.1em solid black;
+  border-bottom: 0.1em solid white;
   margin-bottom: 2em;
   padding: 0 0 0.5em;
 }
@@ -27,4 +37,15 @@
 .menu > li:nth-child(1):before {
   content: "";
   padding: 0;
+}
+footer {
+  text-align: left;
+  color: #FFF;
+  font-size: 12px;
+  width: 100%;
+  height: 10%;
+  line-height: 10px;
+  clear: both;
+  background: #333;
+  position: absolute;
 }

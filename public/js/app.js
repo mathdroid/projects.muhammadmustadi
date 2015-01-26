@@ -18,8 +18,12 @@ config(function ($routeProvider, $locationProvider) {
       templateUrl: 'partials/partial2',
       controller: 'MyCtrl2'
     }).
+    when('/parallel', {
+      templateUrl: 'partials/paralleljs',
+      controller: 'ParallelCtrl'
+    }).
     otherwise({
-      redirectTo: '/view1'
+      redirectTo: '/parallel'
     });
 
   $locationProvider.html5Mode(true);
