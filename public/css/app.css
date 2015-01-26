@@ -1,12 +1,12 @@
 /* app css stylesheet */
 html, body {
-  background: #226BB3 url("../img/grid-pattern.png") -4px -1px;
+  background: #345474 url("../img/grid-pattern.png") -4px -1px;
   color: white;
   font-family: "Raleway";
   height: 100%;
 }
 #page-container {
-  background: #226BB3 url("../img/grid-pattern.png") -4px -1px;
+  background: #345474 url("../img/grid-pattern.png") -4px -1px;
   color: white;
   height: 100%;
 }
