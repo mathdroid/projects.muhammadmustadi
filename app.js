@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies
  */
@@ -21,11 +20,15 @@ var app = module.exports = express();
  */
 
 // all environments
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 1338);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 app.use(morgan('dev'));
-app.use(bodyParser());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+
 app.use(methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -33,7 +36,7 @@ var env = process.env.NODE_ENV || 'development';
 
 // development only
 if (env === 'development') {
-  app.use(express.errorHandler());
+  //app.use(express.errorHandler());
 }
 
 // production only
@@ -61,6 +64,6 @@ app.get('*', routes.index);
  * Start Server
  */
 
-http.createServer(app).listen(app.get('port'), function () {
+http.createServer(app).listen(app.get('port'), function() {
   console.log('Express server listening on port ' + app.get('port'));
 });
