@@ -9,21 +9,28 @@ div(class='row')
 	h2 Initialization
 	p Insert an array of integers.
 	br
-
-	div(class='input-group')
-		span(class='input-group-addon') int
-		input(type='text', class='form-control', placeholder='insert array of numbers, separated by comma', ng-model='form.form1')
-	br
+	div(class='row')
+		div(class='col-md-12')
+			div(class='input-group')
+				span(class='input-group-addon') int
+				input(type='text', class='form-control', placeholder='Insert array of numbers, separated by comma', ng-model='form.form1')
+			br
 
 	div(class='row')
 		div(class='col-md-4')
 			button(class='btn btn-primary', ng-click='inputArray()') Insert to array
 			button(class='btn btn-danger', ng-click='resetArray()') Reset array
-		div(class='col-md-4', ng-show='data.array1')
+		div(class='col-md-4 well well-sm', ng-show='data.array1', style='color:#263238;')
 			p Your array is {{data.array1}}
 	br
 
 	h2 Example 1
-	p We will try to find the n-th Fibonacci number., where n is the element inside your array.
+	p We will try to find the n-th Fibonacci number, where n is the element inside your array.
+	p First we make a Parallel variable from your array above. If you haven't inserted them, do so now.
 	br
 	button(class='btn btn-primary ng-class:{disabled:data.array1==null};', ng-click='createParallel()') Create parallel variable
+	br
+	br
+	div(ng-show='data.parallel.p', class='well well-sm', style='color:#263238;')
+		p Parallel variable is p, which contains the data: {{data.parallel.p}}
+		p Maximum workers: {{strings.p.options.maxWorkers}}

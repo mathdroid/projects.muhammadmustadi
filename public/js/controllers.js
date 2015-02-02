@@ -34,7 +34,12 @@ angular.module('myApp.controllers', []).
     }
     $scope.inputArray = function () {
       $scope.data.arraytemp = $scope.form.form1.split(',');
-      $scope.data.array1 = [];
+      if($scope.data.array1==null) {
+        $scope.data.array1 = [];
+      }
+      else {
+
+      }
       var tempval = null;
       for (var i = 0; i < $scope.data.arraytemp.length; i++) {
         tempval = Math.floor($scope.data.arraytemp[i]);
@@ -44,14 +49,18 @@ angular.module('myApp.controllers', []).
       }
 
       $scope.data.arraytemp = null;
+      $scope.form.form1 = '';
     }
     $scope.resetArray = function () {
-      $scope.data.array1 = [];
+      $scope.data.array1 = null;
     }
     $scope.createParallel = function () {
       console.log('creating parallel variable');
       $scope.data.parallel.p = new Parallel($scope.data.array1);
-      console.log($scope.data.parallel.p);
+      $scope.strings.p = {"options":$scope.data.parallel.p.options};
+    //   console.log($scope.data.parallel.p);
+    //   console.log($scope.data.parallel.p.data);
+    //   console.log($scope.data.parallel.p.options.maxWorkers);
     }
 
     $scope.init();
