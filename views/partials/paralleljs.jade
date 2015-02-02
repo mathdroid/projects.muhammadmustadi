@@ -1,1 +1,29 @@
-p	Parallel
+
+div(class='row')
+	h1 Parallel
+	p This is the implementation of http://adambom.github.io/parallel.js/
+
+	h2 Overview
+	p Parallel.js is a library for multi-core processing in javascript. It gives us high-level access to multicore processing in JavaScript.
+
+	h2 Initialization
+	p Insert an array of integers.
+	br
+
+	div(class='input-group')
+		span(class='input-group-addon') int
+		input(type='text', class='form-control', placeholder='insert array of numbers, separated by comma', ng-model='form.form1')
+	br
+
+	div(class='row')
+		div(class='col-md-4')
+			button(class='btn btn-primary', ng-click='inputArray()') Insert to array
+			button(class='btn btn-danger', ng-click='resetArray()') Reset array
+		div(class='col-md-4', ng-show='data.array1')
+			p Your array is {{data.array1}}
+	br
+
+	h2 Example 1
+	p We will try to find the n-th Fibonacci number., where n is the element inside your array.
+	br
+	button(class='btn btn-primary ng-class:{disabled:data.array1==null};', ng-click='createParallel()') Create parallel variable

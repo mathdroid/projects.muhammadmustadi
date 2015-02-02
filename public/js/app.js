@@ -22,6 +22,10 @@ config(function ($routeProvider, $locationProvider) {
       templateUrl: 'partials/paralleljs',
       controller: 'ParallelCtrl'
     }).
+    when('/others', {
+      templateUrl: 'partials/others',
+      controller: 'OtherCtrl'
+    }).
     otherwise({
       redirectTo: '/parallel'
     });
