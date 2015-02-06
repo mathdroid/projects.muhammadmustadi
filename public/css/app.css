@@ -14,8 +14,27 @@ html, body {
   background: #232832;
   color: #DDD;
 }
-h1 {
+
+/*FONTS*/
+.font-cursive {
   font-family: "Lobster";
+}
+.no-text-decor {
+  text-decoration: none !important;
+}
+
+/*COLORS*/
+.color-text {
+  color: #DDD !important;
+}
+.color-faded {
+  color: #6F6F6F;
+}
+.color-accent {
+  color: #FF2A2A !important;
+}
+.color-well-text {
+  color:#263238;
 }
 .menu {
   list-style: none;

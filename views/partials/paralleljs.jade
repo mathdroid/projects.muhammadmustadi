@@ -22,20 +22,20 @@ div(class='row example-container')
 			button(class='btn btn-danger', ng-click='resetArray()') Reset array
 			br
 		div(class='col-md-6')
-			div(class='well well-sm', ng-show='data.array1', style='color:#263238;')
+			div(class='well well-sm color-well-text', ng-show='data.array1')
 				p Your array is {{data.array1}}
 	br
 
 	p.example1
-		h2 Example 1 <small style='color:#6F6F6F;'> - Fibonacci </small>
+		h2 Example 1 <small class='color-faded'> - Fibonacci </small>
 	p We will try to find the n-th Fibonacci number, where n is the element inside your array.
 	p First we make a Parallel variable from your array above. If you haven't inserted them, do so now.
-	p(class='well well-sm', style='color:#424242;') Parallel operations change the data inside the variable, so check this out again later to see the mutated data.
+	p(class='well well-sm color-well-text') Parallel operations change the data inside the variable, so check this out again later to see the mutated data.
 	br
 	button(class='btn btn-primary ng-class:{disabled:data.array1==null};', ng-click='createParallel()') Create parallel variable
 	br
 	br
-	div(ng-show='data.parallel.p', class='well well-sm', style='color:#263238;')
+	div(ng-show='data.parallel.p', class='well well-sm color-well-text')
 		p Parallel variable is p, which contains the data: {{data.parallel.p}}
 		p Maximum workers: {{strings.p.options.maxWorkers}}
 	br
