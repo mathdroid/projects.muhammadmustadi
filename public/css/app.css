@@ -1,4 +1,7 @@
 /* app css stylesheet */
+html {
+  overflow-y: scroll;
+}
 html, body {
   /*background: #345474 url("../img/grid-pattern.png") -4px -1px;
   color: white;*/
@@ -10,6 +13,7 @@ html, body {
   /*background: #2E3436 url("../img/grid-pattern.png") -4px -1px;*/
   background: #232832;
   color: #DDD;
+  width: 100%;
 }
 h1 {
   font-family: "Lobster";

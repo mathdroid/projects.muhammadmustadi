@@ -28,10 +28,6 @@ config(function ($routeProvider, $locationProvider) {
       templateUrl: 'partials/others',
       controller: 'OtherCtrl'
     }).
-    when('/testphp', {
-      templateUrl: 'partials/testphp',
-      controller: 'OtherCtrl'
-    }).
     otherwise({
       redirectTo: '/parallel'
     });

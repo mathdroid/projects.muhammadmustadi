@@ -21,7 +21,7 @@ angular.module('myApp.controllers', []).
     // write Ctrl here
 
   }).
-  controller('MyCtrl2', function ($scope) {
+  controller('OtherCtrl', function ($scope) {
     // write Ctrl here
 
   }).
