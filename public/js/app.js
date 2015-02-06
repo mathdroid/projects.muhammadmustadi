@@ -7,7 +7,8 @@ angular.module('projectsApp', [
   'myApp.filters',
   'myApp.services',
   'myApp.directives',
-  'ngRoute'
+  'ngRoute',
+  'ngProgress'
 ]).
 config(function ($routeProvider, $locationProvider) {
   $routeProvider.

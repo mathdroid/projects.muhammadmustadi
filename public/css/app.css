@@ -1,9 +1,8 @@
 /* app css stylesheet */
 html, body {
- /* background: #345474 url("../img/grid-pattern.png") -4px -1px;
-  color: white;
+  /*background: #345474 url("../img/grid-pattern.png") -4px -1px;
+  color: white;*/
   font-family: "Raleway";
-  height: 100%;*/
   background: #232832;
   overflow-x: hidden;
 }
@@ -13,6 +12,9 @@ html, body {
   color: #DDD;
   height: 100%;
   width: 100%;
+}
+h1 {
+  font-family: "Lobster";
 }
 .menu {
   list-style: none;

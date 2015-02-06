@@ -25,7 +25,7 @@ angular.module('myApp.controllers', []).
     // write Ctrl here
 
   }).
-  controller('ParallelCtrl', function ($scope, $interval, $timeout) {
+  controller('ParallelCtrl', function ($scope, $interval, $timeout, ngProgress) {
     // write Ctrl here
     $scope.init = function () {
       $scope.data = {"parallel": {}};
@@ -35,6 +35,7 @@ angular.module('myApp.controllers', []).
       $scope.working = {"ex1": false};
     }
     $scope.inputArray = function () {
+      ngProgress.start();
       $scope.data.arraytemp = $scope.form.form1.split(',');
       if($scope.data.array1==null) {
         $scope.data.array1 = [];
@@ -52,6 +53,7 @@ angular.module('myApp.controllers', []).
 
       $scope.data.arraytemp = null;
       $scope.form.form1 = '';
+      ngProgress.complete();
     }
     $scope.resetArray = function () {
       $scope.data.array1 = null;
@@ -98,13 +100,17 @@ angular.module('myApp.controllers', []).
     //     $scope.addNum();
     //   }, 1000);
     // }
-    $scope.countFibo = function () {
-      var q = $scope.data.parallel.p;
+    $scope.countFibo = function () {      var q = $scope.data.parallel.p;
       function fib(n) {
       return n < 2 ? 1 : fib(n - 1) + fib(n - 2);
       };
       $scope.timer.ex1 = Date.now();
       $scope.working.ex1 = true;
+      $timeout(function () {
+        console.log('calling ngProgress');
+        ngProgress.start();
+      }, 10);
+
       $scope.timer.in1 = $interval(function () {
         // body...
         $scope.strings.res3 = 'started: ' + Math.floor(((Date.now() - $scope.timer.ex1 - 100)/1000)) + ' seconds ago.';
@@ -121,6 +127,7 @@ angular.module('myApp.controllers', []).
           $scope.strings.res1 = 'the result is: ' + res;
           $scope.strings.res2 = 'computed in: ' + ((Date.now() - $scope.timer.ex1 - 10)/1000) + ' seconds.';
           $scope.working.ex1 = false;
+          ngProgress.complete();
         }, 10);
       });
       // $scope.data.to = $interval(function () {
