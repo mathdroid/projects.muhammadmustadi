@@ -18,10 +18,9 @@ div(class='row example-container')
 
 	div(class='row')
 		div(class='col-md-6')
-			span
-				button(class='btn btn-primary ng-class:{disabled:!form.form1}', ng-click='inputArray()', style='float:left;') Insert to array
-			span
-				button(class='btn btn-danger', ng-click='resetArray()', style='float:left;') Reset array
+			button(class='btn btn-primary ng-class:{disabled:!form.form1}', ng-click='inputArray()') Insert to array
+			button(class='btn btn-danger', ng-click='resetArray()') Reset array
+			br
 		div(class='col-md-6')
 			div(class='well well-sm', ng-show='data.array1', style='color:#263238;')
 				p Your array is {{data.array1}}
