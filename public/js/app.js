@@ -10,27 +10,27 @@ angular.module('projectsApp', [
   'ngRoute',
   'ngProgress'
 ]).
-config(function ($routeProvider, $locationProvider) {
+config(function($routeProvider, $locationProvider) {
   $routeProvider.
-    when('/view1', {
-      templateUrl: 'partials/partial1',
-      controller: 'MyCtrl1'
-    }).
-    when('/view2', {
-      templateUrl: 'partials/partial2',
-      controller: 'MyCtrl2'
-    }).
-    when('/parallel', {
-      templateUrl: 'partials/paralleljs',
-      controller: 'ParallelCtrl'
-    }).
-    when('/others', {
-      templateUrl: 'partials/others',
-      controller: 'OtherCtrl'
-    }).
-    otherwise({
-      redirectTo: '/parallel'
-    });
+  when('/view1', {
+    templateUrl: 'partials/partial1',
+    controller: 'MyCtrl1'
+  }).
+  when('/view2', {
+    templateUrl: 'partials/partial2',
+    controller: 'MyCtrl2'
+  }).
+  when('/parallel', {
+    templateUrl: 'partials/paralleljs',
+    controller: 'ParallelCtrl'
+  }).
+  when('/others', {
+    templateUrl: 'partials/others',
+    controller: 'OtherCtrl'
+  }).
+  otherwise({
+    redirectTo: '/parallel'
+  });
 
   $locationProvider.html5Mode(true);
 });
