@@ -33,6 +33,8 @@ angular.module('myApp.controllers', []).
       $scope.strings = {"res3": ''};
       $scope.timer = {};
       $scope.working = {"ex1": false};
+      ngProgress.height('5px');
+      ngProgress.color('#FF2A2A');
     }
     $scope.inputArray = function () {
       ngProgress.start();
@@ -107,7 +109,7 @@ angular.module('myApp.controllers', []).
       $scope.timer.ex1 = Date.now();
       $scope.working.ex1 = true;
       $timeout(function () {
-        console.log('calling ngProgress');
+        // console.log('calling ngProgress');
         ngProgress.start();
       }, 10);
 
