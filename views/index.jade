@@ -1,35 +1,36 @@
 extends layout
 
 block body
-  div(id='page-container')
+  div(id='page-container', class='container')
     div(ng-controller='AppCtrl')
       div(class='row')
-        div(class='col-md-8 col-md-offset-2')
-          div(class='page-header')
-            h1 
-              | Projects
-              = '.m13i'
-        div(class='col-md-2')
-        div(class='row')
-          div(class='col-md-12', style='padding:0px')
-            div(class='col-md-8 col-md-offset-2')
-              ul.menu(style='margin:5px 0px;')
-                li
-                  a(href='parallel') 'Paralleljs Implementation'
-                li
-                  a(href='others') 'Others'
-                li
-                  a(href='testphp') 'TEST'
-            div(class='col-md-2')
-        div(class='col-md-6 col-md-offset-3')
+        div(class='col-md-12')
+          div(class='col-md-8 col-md-offset-2')
+            div(class='page-header')
+              h1 
+                | Projects
+                = '.m13i'
+          div(class='col-md-2')
+          div(class='row')
+            div(class='col-md-12', style='padding:0px')
+              div(class='col-md-8 col-md-offset-2')
+                ul.menu(style='margin:5px 0px;')
+                  li
+                    a(href='parallel') 'Paralleljs Implementation'
+                  li
+                    a(href='others') 'Others'
+                  li
+                    a(href='testphp') 'TEST'
+              div(class='col-md-2')
+          div(class='col-md-6 col-md-offset-3')
 
-          div(ng-view)
+            div(ng-view)
 
-          div(class='page-footer')
-            br
-            br
-            br
-        div(class='col-md-3')
+            div(class='page-footer')
+              br
+              br
+              br
+          div(class='col-md-3')
 
 
   script(src='js/parallel.js')
