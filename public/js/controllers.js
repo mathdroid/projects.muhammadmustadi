@@ -32,6 +32,7 @@ angular.module('myApp.controllers', []).
       $scope.form = {};
       $scope.strings = {"res3": ''};
       $scope.timer = {};
+      $scope.working = {"ex1": false};
     }
     $scope.inputArray = function () {
       $scope.data.arraytemp = $scope.form.form1.split(',');
@@ -103,6 +104,15 @@ angular.module('myApp.controllers', []).
       return n < 2 ? 1 : fib(n - 1) + fib(n - 2);
       };
       $scope.timer.ex1 = Date.now();
+      $scope.working.ex1 = true;
+      $scope.timer.in1 = $interval(function () {
+        // body...
+        $scope.strings.res3 = 'started: ' + Math.floor(((Date.now() - $scope.timer.ex1 - 100)/1000)) + ' seconds ago.';
+        if($scope.working.ex1 == false) {
+          $interval.cancel($scope.timer.in1);
+          $scope.strings.res3 = '';
+        }
+      }, 100);
       $scope.data.parallel.p.map(fib).then(function (res) {
         // // $scope.resFibo(res);
         // console.log(res);
@@ -110,6 +120,7 @@ angular.module('myApp.controllers', []).
         $timeout(function () {
           $scope.strings.res1 = 'the result is: ' + res;
           $scope.strings.res2 = 'computed in: ' + ((Date.now() - $scope.timer.ex1 - 10)/1000) + ' seconds.';
+          $scope.working.ex1 = false;
         }, 10);
       });
       // $scope.data.to = $interval(function () {

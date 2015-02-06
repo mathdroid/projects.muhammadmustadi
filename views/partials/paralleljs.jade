@@ -18,14 +18,17 @@ div(class='row example-container')
 			br
 
 	div(class='row')
-		div(class='col-md-4')
-			button(class='btn btn-primary', ng-click='inputArray()') Insert to array
-			button(class='btn btn-danger', ng-click='resetArray()') Reset array
-		div(class='col-md-4 well well-sm', ng-show='data.array1', style='color:#263238;')
-			p Your array is {{data.array1}}
+		div(class='col-md-12')
+			div(class='col-md-6')
+				button(class='btn btn-primary ng-class:{disabled:!form.form1}', ng-click='inputArray()', style='float:left;') Insert to array
+				button(class='btn btn-danger', ng-click='resetArray()', style='float:left;') Reset array
+			div(class='col-md-6 well well-sm', ng-show='data.array1', style='color:#263238;')
+				p Your array is {{data.array1}}
 	br
 
-	h2 Example 1
+	p.example1
+		h2 Example 1
+		span - Fibonacci
 	p We will try to find the n-th Fibonacci number, where n is the element inside your array.
 	p First we make a Parallel variable from your array above. If you haven't inserted them, do so now.
 	p(class='well well-sm', style='color:#424242;') Parallel operations change the data inside the variable, so check this out again later to see the mutated data.
