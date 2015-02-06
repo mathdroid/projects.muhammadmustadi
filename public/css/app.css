@@ -4,13 +4,13 @@ html, body {
   color: white;
   font-family: "Raleway";
   height: 100%;*/
-  background: #37474F;
-  overflow: hidden;
+  background: #232832;
+  overflow-x: hidden;
 }
 #page-container {
   /*background: #2E3436 url("../img/grid-pattern.png") -4px -1px;*/
-  background: #37474F;
-  color: #EEE;
+  background: #232832;
+  color: #DDD;
   height: 100%;
   width: 100%;
 }

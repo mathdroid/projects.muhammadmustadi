@@ -25,13 +25,12 @@ angular.module('myApp.controllers', []).
     // write Ctrl here
 
   }).
-  controller('ParallelCtrl', function ($scope, $interval, $timeout) {
+  controller('ParallelCtrl', function ($scope, $interval) {
     // write Ctrl here
     $scope.init = function () {
-      $scope.data = {"parallel": {}};
+      $scope.data = {"parallel": {},"x":1,"y":2, "z":null};
       $scope.form = {};
       $scope.strings = {"res3": ''};
-      $scope.timer = {};
     }
     $scope.inputArray = function () {
       $scope.data.arraytemp = $scope.form.form1.split(',');
@@ -57,62 +56,50 @@ angular.module('myApp.controllers', []).
     }
     $scope.createParallel = function () {
       // console.log('creating parallel variable');
-      
-      var parArray = [];
-      for (var i = 0; i<$scope.data.array1.length; i++) {
-        parArray.push($scope.data.array1[i]);
-      }
-      $scope.data.parallel.p = new Parallel(parArray);
+      $scope.data.parallel.p = new Parallel($scope.data.array1);
       $scope.strings.p = {"options":$scope.data.parallel.p.options};
     //   console.log($scope.data.parallel.p);
     //   console.log($scope.data.parallel.p.data);
     //   console.log($scope.data.parallel.p.options.maxWorkers);
     }
-    // $scope.resFibo = function (res) {
-    //   console.log(res);
-    //   console.log($scope);
-    //   $scope.strings.res1 = 'qwe';
-    //   $scope.strings.res2 = 'rty';
-    //   $scope.strings.res3 = res;
-    //   console.log($scope);
-    // }
-    // $scope.check = function () {
-    //   console.log('checka');
-    //   console.log($scope.strings.res3);
-    //   $scope.strings.res4 = $scope.strings.res3;
-    // }
-
-    // $scope.addNum = function () {
-    //   console.log('adding');
-    //   if ($scope.data.z) {
-    //     $scope.data.z = $scope.data.x + $scope.data.y + $scope.data.z;
-    //   }
-    //   else {
-    //     $scope.data.z = $scope.data.x + $scope.data.y;
-    //   }
-    //   console.log($scope.data);
-    // }
-    // $scope.addNumRepeat = function () {
-    //   $interval(function () {
-    //     $scope.addNum();
-    //   }, 1000);
-    // }
+    $scope.resFibo = function (res) {
+      // console.log(res);
+      // console.log($scope);
+      // $scope.strings.res1 = 'qwe';
+      // $scope.strings.res2 = 'rty';
+      // $scope.strings.res3 = res;
+      // console.log($scope);
+    }
+    $scope.check = function () {
+      // console.log('checka');
+      // console.log($scope.strings.res3);
+      // $scope.strings.res4 = $scope.strings.res3;
+    }
+    $scope.addNum = function () {
+      console.log('adding');
+      if ($scope.data.z) {
+        $scope.data.z = $scope.data.x + $scope.data.y + $scope.data.z;
+      }
+      else {
+        $scope.data.z = $scope.data.x + $scope.data.y;
+      }
+      console.log($scope.data);
+    }
+    $scope.addNumRepeat = function () {
+      $interval(function () {
+        $scope.addNum();
+      }, 1000);
+    }
     $scope.countFibo = function () {
-      var q = $scope.data.parallel.p;
-      function fib(n) {
-      return n < 2 ? 1 : fib(n - 1) + fib(n - 2);
-      };
-      $scope.timer.ex1 = Date.now();
-      $scope.data.parallel.p.map(fib).then(function (res) {
-        // // $scope.resFibo(res);
-        // console.log(res);
-        // console.log($scope.data.parallel.p);
-        $timeout(function () {
-          $scope.strings.res1 = 'the result is: ' + res;
-          $scope.strings.res2 = 'computed in: ' + ((Date.now() - $scope.timer.ex1 - 10)/1000) + ' seconds.';
-        }, 10);
-      });
-      // $scope.data.to = $interval(function () {
+      // var q = $scope.data.parallel.p;
+      // function fib(n) {
+      // return n < 2 ? 1 : fib(n - 1) + fib(n - 2);
+      // };
+      // $scope.data.parallel.p.map(fib).then(function (res) {
+      //   $scope.resFibo(res);
+      //   console.log($scope.data.parallel.p);
+      // });
+      // $scope.data.to = setInterval(function () {
       //   $scope.check();
       // }, 1000);
 

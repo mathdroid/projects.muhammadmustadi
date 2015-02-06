@@ -6,8 +6,7 @@ angular.module('projectsApp', [
   'myApp.controllers',
   'myApp.filters',
   'myApp.services',
-  'myApp.directives',
-  'ngRoute'
+  'myApp.directives'
 ]).
 config(function ($routeProvider, $locationProvider) {
   $routeProvider.

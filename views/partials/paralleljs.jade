@@ -1,7 +1,8 @@
 
-div(class='row')
+div(class='row example-container')
 	h1 Parallel
-	p This is the implementation of http://adambom.github.io/parallel.js/
+	p This is the implementation of 
+		a(href='https://raw.githubusercontent.com/adambom/parallel.js/master/lib/parallel.js') https://github.com/adambom/parallel.js
 
 	h2 Overview
 	p Parallel.js is a library for multi-core processing in javascript. It gives us high-level access to multicore processing in JavaScript.
@@ -27,6 +28,7 @@ div(class='row')
 	h2 Example 1
 	p We will try to find the n-th Fibonacci number, where n is the element inside your array.
 	p First we make a Parallel variable from your array above. If you haven't inserted them, do so now.
+	p(class='well well-sm', style='color:#424242;') Parallel operations change the data inside the variable, so check this out again later to see the mutated data.
 	br
 	button(class='btn btn-primary ng-class:{disabled:data.array1==null};', ng-click='createParallel()') Create parallel variable
 	br
@@ -34,3 +36,19 @@ div(class='row')
 	div(ng-show='data.parallel.p', class='well well-sm', style='color:#263238;')
 		p Parallel variable is p, which contains the data: {{data.parallel.p}}
 		p Maximum workers: {{strings.p.options.maxWorkers}}
+	br
+	br
+	h3 Fibonacci
+	button(class='btn btn-primary ng-class:{disabled:data.parallel.p==null};', ng-click='countFibo()') Fibonacci!
+
+	p
+		span(ng-bind='strings.res1')
+	p
+		span(ng-bind='strings.res2')
+	p
+		span(ng-bind='strings.res3')
+	p
+		span(ng-bind='strings.res4')
+	//- p
+	//- 	span(ng-bind='data.parallel.p')
+	//- p {{strings.res4}}
